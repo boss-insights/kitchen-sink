@@ -1,0 +1,263 @@
+/* custom css */
+
+small.extraInfo{
+    position:absolute; right:0;top:16px;z-index:5000; display:inline-block; padding-right:30px;
+}
+small.extraInfo a{color:#333; text-decoration:underline;}
+
+#companyCompetitionItem {
+    display: none;
+}
+
+#hintCard {
+    background-color: #222f3e;
+    color: #fff;
+}
+
+#hintCard a {
+    color: #f9d64c;
+    text-decoration: underline;
+}
+
+#companyProfileMarketCard {
+    display: none;
+}
+
+body[data-sa-theme="13"] header div.logo {
+    background-color: #341e7e;
+}
+
+/*Radio buttons*/
+
+.col-2.radio {
+    display: flex;
+    align-content: space-around;
+    justify-content: center;
+
+}
+
+.col-1.radio {
+    width: 40%;
+    flex: none;
+    max-width: none;
+}
+
+/*Question labels*/
+label.col-8.col-form-label {
+    margin-top: 0;
+}
+
+div.form-group.row.odd {
+    display: flex;
+    align-items: baseline;
+
+}
+
+/*Input fields for initials*/
+.col-4.initialHere {
+    align-self: center;
+}
+
+.row.initialHere {
+    padding-top: 2rem;
+    align-items: center;
+    font-weight: bold;
+    width: 80%;
+;
+}
+
+.col-10.initialHere {
+    padding-left: 0;
+}
+
+b.form-section {
+    margin-left: 10px;
+}
+
+/*Initialing Statements*/
+
+.col-1.initialStatement {
+    align-self: center;
+    border-top: 5px solid #ffffff;
+    border-bottom: 5px solid #ffffff;
+}
+
+.col-11.col-form-label {
+    margin-top: 0;
+    border-top: 5px solid #ffffff;
+    border-bottom: 5px solid #ffffff;;
+}
+
+/*Representations, Authorizations, and Certifications*/
+
+.representations {
+    text-align: justify;
+    line-height: 1.8;
+}
+
+/*Applicant info*/
+#date_of_establishment {
+    width: 100%;
+}
+
+/*Applicant ownership*/
+.darker {
+    margin-top: 8px !important;
+}
+
+.col-12.owner {
+    border-bottom: 4px solid #ffffff;
+    margin-bottom: 3px;
+}
+
+.row.owner {
+    padding-bottom: 5px;
+    text-align: center;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.col-6.address {
+    text-align: center;
+    padding-bottom: 35px;
+}
+
+.ownerName {
+    width: 100%;
+    /* align-self: center; */
+    justify-content: center;
+    font-size: 1.5rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+.col-6.ownerInfo {
+    display: flex;
+    padding-right: 0;
+}
+
+/*Links on NAICS and Applicant Meets Size Standard labels*/
+.col-9.col-form-label.darker.linkSize {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.col-9.col-form-label.darker.linkNAICS {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.linkExtraInfo a {
+    color: rgba(22,22,22,.99);
+    text-decoration: underline;
+    align-self: center;
+}
+
+.linkLabelSize {
+    width: auto;
+
+}
+
+.linkLabelNaics {
+    width: auto;
+
+}
+
+/*Zip code and Zip + 4 labels*/
+.linkLabelZip {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.col-9.col-form-label.darker.Zip {
+    height: 52.28%;
+}
+
+@media only screen and (max-width: 768px) {
+    .row.initialHere {
+        width: 1100px;
+    }
+
+    .col-2.radio {
+        flex-direction: column;
+    }
+
+}
+
+@media only screen and (max-width: 1024px) {
+    .col-12.owner {
+        font-size: 0.73rem;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+
+    .linkLabelSize {
+        width: 65%;
+        padding-right: 0;
+        overflow-wrap: break-word;
+    }
+
+}
+
+@media only screen and (max-width: 1370px)  {
+
+    .linkLabelSize {
+        width: 70%;
+
+    }
+
+    .linkExtraInfo.NAICS {
+        padding-top: 10px;
+        padding-bottom: 10px
+    }
+
+    .col-9.col-form-label.darker.linkSize {
+        padding-right: 0;
+        overflow-wrap: break-word;
+    }
+
+}
+
+@media only screen and (max-width: 1495px) {
+    .col-2.owner {
+        width: 20%;
+    }
+
+    .col-12.owner {
+        font-size: 1rem;
+    }
+
+    .row.owner {
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: center;
+    }
+
+    .col-3.owner {
+        padding-left: 5px;
+    }
+
+    .col-4.owner {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    .zmdi.zmdi-info.help.link {
+        padding-right: 0;
+    }
+
+    .col-9.col-form-label.darker.linkSize {
+        padding-right: 2px;
+        justify-content: space-between;
+    }
+
+}
