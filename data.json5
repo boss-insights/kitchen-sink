@@ -1,341 +1,229 @@
 /* ORIGINATION AND FORGIVENESS COMBINED */
 {
   profile: {
+    title: '',
+
     fields: [
-      {type: 'divider', title: 'Contact Info'},
+      {type: 'divider', title: 'Client Information'},
+
       {type: 'hidden'},
 
       {
-        name: 'legal_name',
+        name: 'first_name',
         type: 'text',
-        title: 'Business Legal Name',
-        hint:  "Enter the same business name used on your PPP application, which should be identical to the name you use on your tax returns.",
-        switch: {
-          control: {key: 'ppp2-form-selection', field: 'draw-selection'},
-          cases: {
-            'first': {key: 'ppp2-draw-application-first', field: 'legal_name'},
-            'first-schedule-c': {key: 'ppp2-draw-application-first-schedule-c', field: 'legal_name'},
-            'second': {key: 'ppp2-draw-application-second', field: 'legal_name'},
-            'second-schedule-c': {key: 'ppp2-draw-application-second-schedule-c', field: 'legal_name'}
-          },
-          ifEmpty: true
-        }
+        title: 'First Name',
+        attributes: {required: true},
       },
       {
-        name: 'dba_tradename',
+        name: 'last_name',
         type: 'text',
-        title: 'DBA or Tradename, if applicable',
-        switch: {
-          control: {key: 'ppp2-form-selection', field: 'draw-selection'},
-          cases: {
-            'first': {key: 'ppp2-draw-application-first', field: 'dba_tradename'},
-            'first-schedule-c': {key: 'ppp2-draw-application-first-schedule-c', field: 'dba_tradename'},
-            'second': {key: 'ppp2-draw-application-second', field: 'dba_tradename'},
-            'second-schedule-c': {key: 'ppp2-draw-application-second-schedule-c', field: 'dba_tradename'}
-          },
-          ifEmpty: true
-        }
-      },
-
-      {
-        name: 'address_line_1',
-        type: 'text',
-        title: 'Address Line 1',
-        switch: {
-          control: {key: 'ppp2-form-selection', field: 'draw-selection'},
-          cases: {
-            'first': {key: 'ppp2-draw-application-first', field: 'address_line_1'},
-            'first-schedule-c': {key: 'ppp2-draw-application-first-schedule-c', field: 'address_line_1'},
-            'second': {key: 'ppp2-draw-application-second', field: 'address_line_1'},
-            'second-schedule-c': {key: 'ppp2-draw-application-second-schedule-c', field: 'address_line_1'}
-          },
-          ifEmpty: true
-        }
-      },
-      {
-        name: 'address_line_2',
-        type: 'text',
-        title: 'Address Line 2',
-        switch: {
-          control: {key: 'ppp2-form-selection', field: 'draw-selection'},
-          cases: {
-            'first': {key: 'ppp2-draw-application-first', field: 'address_line_2'},
-            'first-schedule-c': {key: 'ppp2-draw-application-first-schedule-c', field: 'address_line_2'},
-            'second': {key: 'ppp2-draw-application-second', field: 'address_line_2'},
-            'second-schedule-c': {key: 'ppp2-draw-application-second-schedule-c', field: 'address_line_2'}
-          },
-          ifEmpty: true
-        }
-      },
-      {
-        name: 'city',
-        type: 'text',
-        title: 'City',
-        switch: {
-          control: {key: 'ppp2-form-selection', field: 'draw-selection'},
-          cases: {
-            'first': {key: 'ppp2-draw-application-first', field: 'city'},
-            'first-schedule-c': {key: 'ppp2-draw-application-first-schedule-c', field: 'city'},
-            'second': {key: 'ppp2-draw-application-second', field: 'city'},
-            'second-schedule-c': {key: 'ppp2-draw-application-second-schedule-c', field: 'city'}
-          },
-          ifEmpty: true
-        }
-      },
-      {
-        name: 'state',
-        type: 'text',
-        title: 'State (2 letter code)',
-        switch: {
-          control: {key: 'ppp2-form-selection', field: 'draw-selection'},
-          cases: {
-            'first': {key: 'ppp2-draw-application-first', field: 'state'},
-            'first-schedule-c': {key: 'ppp2-draw-application-first-schedule-c', field: 'state'},
-            'second': {key: 'ppp2-draw-application-second', field: 'state'},
-            'second-schedule-c': {key: 'ppp2-draw-application-second-schedule-c', field: 'state'}
-          },
-          ifEmpty: true
-        }
-      },
-
-      {
-        name: 'business_phone',
-        type: 'tel',
-        title: 'Business Phone',
-        switch: {
-          control: {key: 'ppp2-form-selection', field: 'draw-selection'},
-          cases: {
-            'first': {key: 'ppp2-draw-application-first', field: 'phone_number'},
-            'first-schedule-c': {key: 'ppp2-draw-application-first-schedule-c', field: 'phone_number'},
-            'second': {key: 'ppp2-draw-application-second', field: 'phone_number'},
-            'second-schedule-c': {key: 'ppp2-draw-application-second-schedule-c', field: 'phone_number'}
-          },
-          ifEmpty: true
-        }
+        title: 'Last Name',
+        attributes: {required: true},
       },
       {
         name: 'email',
         type: 'email',
         title: 'Email',
-        switch: {
-          control: {key: 'ppp2-form-selection', field: 'draw-selection'},
-          cases: {
-            'first': {key: 'ppp2-draw-application-first', field: 'primary_contact_email'},
-            'first-schedule-c': {key: 'ppp2-draw-application-first-schedule-c', field: 'primary_contact_email'},
-            'second': {key: 'ppp2-draw-application-second', field: 'primary_contact_email'},
-            'second-schedule-c': {key: 'ppp2-draw-application-second-schedule-c', field: 'primary_contact_email'}
-          },
-          ifEmpty: true
+        attributes: {required: true},
+      },
+      {
+        name: 'business_phone',
+        type: 'tel',
+        title: 'Phone Number',
+        attributes: {required: true, pattern:'[0-9]{3}-[0-9]{3}-[0-9]{4}', oninvalid: "setCustomValidity('Please enter a valid phone number (123-456-7890).')", oninput: "setCustomValidity('')" },
+        hint: 'A valid phone number follows the XXX-XXX-XXXX format',
+      },
+      {
+        name: 'heard_about_us',
+        type: 'select',
+        title: 'How did you hear about us?',
+        multiple: false,
+        typeDisplay: 'select',
+        values: [
+          {title: '', value: ''},
+          {title:  'LinkedIn', value: 'linkedin'},
+          {title:  'Facebook/Instagram', value: 'facebook_instagram'},
+          {title: 'Referral', value:  'referral'},
+          {title: 'Other', value:  'other'},
+        ],
+        attributes: {required: true},
+      },
+      {
+        name: 'heard_other',
+        type: 'text',
+        title: 'Please share how you heard about us',
+        visibility: {
+          contains: {field: 'heard_about_us', value: 'other'}
         }
       },
 
-      {name: 'first_name', type: 'text', title: 'Primary Contact First Name'},
-      {name: 'last_name', type: 'text', title: 'Primary Contact Last Name'},
-
-      {type: 'divider', title: 'Application Info'},
+      {type: 'divider', title: 'Business Information'},
       {type: 'hidden'},
 
       {
-        name: 'ppp_forgiveness_draw',
+        name: 'business_type',
         type: 'select',
-        title: 'Please select for which PPP Draw you are applying for forgiveness:',
+        title: 'Business Type',
+        typeDisplay: 'select',
         values: [
-          {title: 'First Draw PPP Loan', value: '1'},
-          { title: 'Second Draw PPP Loan', value: '2'}
+          {title: '', value: ''},
+          {title:  'LLC', value: 'LLC'},
+          {title:  'Partnership', value: 'Partnership'},
+          {title:  'S-Corp', value: 'S-Corp'},
+          {title:  'Sole Proprietorship', value: 'Sole Proprietorship'},
+          {title:  'C-Corp', value: 'C-Corp'},
         ],
-        switch: {
-          control: {key: 'ppp2-form-selection', field: 'draw-selection'},
-          cases: {
-            'first': '1',
-            'first-schedule-c': '1',
-            'second': '2',
-            'second-schedule-c': '2'
-          },
-          ifEmpty: true
-        }
+        attributes: {required: true},
       },
-      {type: 'hidden'},
-
+      {
+        name: 'legal_name',
+        type: 'text',
+        title: 'Business Name',
+      },
       {
         name: 'tin',
         type: 'text',
-        title: 'Business EIN/SSN/ITIN',
-        hint: "Your business Tax Identification Number. Use the same information as on your PPP application unless the information has changed.",
-        switch: {
-          control: {key: 'ppp2-form-selection', field: 'draw-selection'},
-          cases: {
-            'first': {key: 'ppp2-draw-application-first', field: 'tin'},
-            'first-schedule-c': {key: 'ppp2-draw-application-first-schedule-c', field: 'tin'},
-            'second': {key: 'ppp2-draw-application-second', field: 'tin'},
-            'second-schedule-c': {key: 'ppp2-draw-application-second-schedule-c', field: 'tin'}
-          },
-          ifEmpty: true
-        }
+        title: 'EIN Number',
+        attributes: {pattern: '[0-9]{9}', oninvalid: "setCustomValidity('Please enter a valid 9 digit EIN number.')", oninput: "setCustomValidity('')"},
       },
       {
-        name: 'loan_amount',
-        type: 'number',
-        title: 'PPP Loan Amount',
-        hint: "The full loan amount you received.<br>You can confirm this amount in your bank records,<br>PPP loan agreement, or in a confirmation email.",
-        switch: {
-          control: {key: 'ppp2-form-selection', field: 'draw-selection'},
-          cases: {
-            'first': {key: 'ppp2-draw-application-first', field: 'loan_amount'},
-            'first-schedule-c': {key: 'ppp2-draw-application-first-schedule-c', field: 'loan_amount'},
-            'second': {key: 'ppp2-draw-application-second', field: 'loan_amount'},
-            'second-schedule-c': {key: 'ppp2-draw-application-second-schedule-c', field: 'loan_amount'}
-          },
-          default: {key: 'ppp2-lender-review', field: 'loan-amount'},
-          ifEmpty: true
-        }
-      },
-
-      {
-        name: 'sba_loan',
+        name: 'address_line_1',
         type: 'text',
-        title: 'SBA Loan Number',
-        hint: "This is your E-tran number that the SBA generated for you. Each business gets one E-tran number per PPP loan. If you have multiple businesses and multiple PPP loans, you will have more than one E-tran number.<br> If you don't know where to find this number, speak to your lender — they'll have it on file.",
-        link: {
-          value: {key: 'ppp2-lender-review', field: 'sba-number'},
-          ifEmpty: true
-        }
+        title: 'Address Line 1',
+        attributes: {required: true},
       },
       {
-        name: 'lender_loan',
+        name: 'address_line_2',
         type: 'text',
-        title: 'Lender PPP Loan Number',
-        hint: " The number the lender has assigned to your loan in their systems.<br>You can find this on your signed loan docs.<br>If you can't find it, your lender will be able to provide it for you. <br> "
+        title: 'Address Line 2',
       },
-
       {
-        name: 'num_employees_at_loan',
+        name: 'city',
+        type: 'text',
+        title: 'City',
+        attributes: {required: true},
+      },
+      {
+        name: 'state',
+        type: 'text',
+        title: 'State',
+        attributes: {required: true},
+      },
+      {
+        name: 'zip_code',
+        type: 'text',
+        title: 'Zip Code',
+        attributes: {required: true, pattern: '(\\d{5}([\\-]\\d{4})?)', oninvalid: "setCustomValidity('Please enter a valid zip code(12345 or 12345-6789).')", oninput: "setCustomValidity('')"},
+      },
+      {
+        name: 'number_employees',
         type: 'number',
-        title: 'Employees at Time of Loan Application',
-        hint: "Enter the total number of employees at the time of the PPP loan application.",
-        switch: {
-          control: {key: 'ppp2-form-selection', field: 'draw-selection'},
-          cases: {
-            'first': {key: 'ppp2-draw-application-first', field: 'number_of_employees'},
-            'first-schedule-c': {key: 'ppp2-draw-application-first-schedule-c', field: 'number_of_employees'},
-            'second': {key: 'ppp2-draw-application-second', field: 'number_of_employees'},
-            'second-schedule-c': {key: 'ppp2-draw-application-second-schedule-c', field: 'number_of_employees'}
-          },
-          ifEmpty: true
-        }
-      },
-      {name: 'num_employees_at_forgiveness', type:  'number', title: 'Employees at Time of Forgiveness Application', hint: "Enter the total number of employees at the time the Borrower is applying for loan forgiveness."},
-
-      {name: 'covered_start', type: 'date', title: 'Covered Period Start Date (Loan Disbursement Date)', hint: "The Covered Period begins on the date the loan was originally disbursed. It ends on a date selected by the Borrower that is at least 8 weeks following the date of loan disbursement and not more than 24 weeks after the date of loan disbursement.<br>For example, if the Borrower received their PPP loan proceeds on Monday, April 20, 2020, the first day of the Covered Period is Monday, April 20, 2020 and the final day of the Covered Period is any date selected by the Borrower between Sunday, June 14, 2020 and Sunday, October 4, 2020."},
-      {name: 'covered_end', type: 'date', title: 'Covered Period End Date', hint: "In no event may the Covered Period extend beyond September 30, 2021."},
-
-
-      //  Hidden fields
-      {
-        name: 'naics_code',
-        type: 'hidden',
-        title: 'NAICS Code',
-        switch: {
-          control: {key: 'ppp2-form-selection', field: 'draw-selection'},
-          cases: {
-            'first': {key: 'ppp2-draw-application-first', field: 'naics_code'},
-            'first-schedule-c': {key: 'ppp2-draw-application-first-schedule-c', field: 'naics_code'},
-            'second': {key: 'ppp2-draw-application-second', field: 'naics_code'},
-            'second-schedule-c': {key: 'ppp2-draw-application-second-schedule-c', field: 'naics_code'}
-          },
-          ifEmpty: true
-        }
+        title: 'How many employees do you have?',
+        attributes: {required: true},
       },
       {
-        name: 'primary_contact',
-        type: 'hidden',
-        title: 'Primary Contact',
-        switch: {
-          control: {key: 'ppp2-form-selection', field: 'draw-selection'},
-          cases: {
-            'first': {key: 'ppp2-draw-application-first', field: 'primary_contact'},
-            'first-schedule-c': {key: 'ppp2-draw-application-first-schedule-c', field: 'primary_contact'},
-            'second': {key: 'ppp2-draw-application-second', field: 'primary_contact'},
-            'second-schedule-c': {key: 'ppp2-draw-application-second-schedule-c', field: 'primary_contact'}
-          },
-          ifEmpty: true
-        }
+        name: 'loan_amout',
+        type: 'money',
+        title: 'How much funding do you need?',
+        attributes: {required: true}
       },
 
-      // these next 2 loan_workflow_ fields are hidden so that they can't be overwritten and will always show what the loan application has
-      {
-        name: 'loan_workflow_loan_amount',
-        type: 'hidden',
-        title: 'Loan Workflow Loan Amount',
-        hint: "The full loan amount you received.<br>You can confirm this amount in your bank records,<br>PPP loan agreement, or in a confirmation email.",
-        switch: {
-          control: {key: 'ppp2-form-selection', field: 'draw-selection'},
-          cases: {
-            'first': {key: 'ppp2-draw-application-first', field: 'loan_amount'},
-            'first-schedule-c': {key: 'ppp2-draw-application-first-schedule-c', field: 'loan_amount'},
-            'second': {key: 'ppp2-draw-application-second', field: 'loan_amount'},
-            'second-schedule-c': {key: 'ppp2-draw-application-second-schedule-c', field: 'loan_amount'}
-          },
-          default: {key: 'ppp2-lender-review', field: 'loan-amount'},
-          ifEmpty: true
-        }
-      },
-      {
-        name: 'loan_workflow_sba_loan',
-        type: 'hidden',
-        title: 'Loan Workflow SBA Loan Number',
-        hint: "This is your E-tran number that the SBA generated for you. Each business gets one E-tran number per PPP loan. If you have multiple businesses and multiple PPP loans, you will have more than one E-tran number.<br> If you don't know where to find this number, speak to your lender — they'll have it on file.",
-        link: {
-          value: {key: 'ppp2-lender-review', field: 'sba-number'},
-          ifEmpty: true
-        }
-      },
 
-      {name: 'business_type', type: 'hidden', title: 'Business Type'},
-      {name: 'zip_code', type: 'hidden', title: 'Zip Code'},
-      {name: 'zip_code_plus_4', type: 'hidden', title: 'Zip+4'},
-      {name: 'tin_type', type: 'hidden', title: 'TIN Type'},
-      {name: 'average_monthly_payroll', type: 'hidden', title: 'Average Monthly Payroll'},
-      {name: 'number_of_employees', type: 'hidden', title: 'Number of Employees'},
-
-      {name: 'fd_question_1', type: 'hidden', title: 'Question 1'},
-      {name: 'fd_question_2', type: 'hidden', title: 'Question 2'},
-      {name: 'fd_question_5', type: 'hidden', title: 'Question 5'},
-      {name: 'fd_question_6', type: 'hidden', title: 'Question 6'},
-      {name: 'fd_question_7', type: 'hidden', title: 'Question 7'},
-
-      {name: 'ppp_first_draw_sba_loan_number', type: 'hidden', title: 'PPP First Draw SBA Loan Number'},
-      {name: 'period_1_quarter', type: 'hidden', title: '2020 Quarter'},
-      {name: 'period_1_revenue', type: 'hidden', title: '2020 Quarter Gross Receipts'},
-      {name: 'period_2_quarter', type: 'hidden', title: '2019 Reference Quarter'},
-      {name: 'period_2_revenue', type: 'hidden', title: '2019 Reference Quarter Gross Receipts'},
-
-      {name: 'sd_question_1', type: 'hidden', title: 'Second Draw Question 1'},
-      {name: 'sd_question_2', type: 'hidden', title: 'Second Draw Question 2'},
-      {name: 'sd_question_4', type: 'hidden', title: 'Second Draw Question 4'},
-      {name: 'sd_question_5', type: 'hidden', title: 'Second Draw Question 5'},
-      {name: 'sd_question_6', type: 'hidden', title: 'Second Draw Question 6'},
-
-      {name: 'ppp_loan_draw', type: 'hidden', title: 'Loan Draw', link: {value: {key: 'ppp2-form-selection', field: 'draw-selection'}, ifEmpty: true}},
+      {type: 'divider', title: 'Other' },
+      {type: 'hidden'},
 
       {
-        name: 'signature_date_2483',
-        type: 'hidden',
-        title: '2483 Signature Date',
-        switch: {
-          control: {key: 'ppp2-form-selection', field: 'draw-selection'},
-          cases: {
-            'first': {key: 'ppp2-draw-application-first', field: 'signature_date'},
-            'first-schedule-c': {key: 'ppp2-draw-application-first-schedule-c', field: 'signature_date'},
-            'second': {key: 'ppp2-draw-application-second', field: 'signature_date'},
-            'second-schedule-c': {key: 'ppp2-draw-application-second-schedule-c', field: 'signature_date'}
-          },
-          ifEmpty: true
+        name: 'other_notes',
+        type: 'textarea',
+        title: 'Other Notes',
+        description: '(Optional)'
+      },
+      {
+        name: 'other_files',
+        type: 'file',
+        title: 'Other Files',
+        multiple: true,
+        description: '(Optional)',
+        access: {
+          read: ['admins', 'managing-officers', 'loan-officers'],
+          modify: ['admins', 'managing-officers', 'loan-officers']
         }
       },
-      {name: 'ppp_loan_decision_date', type: 'hidden', title:  'Loan Decision Date', link: {value: {key: 'ppp2-lender-review', field: 'sba-decision-date'}, ifEmpty: true}}
-    ],
+    ]
   },
   forms: {
+    submit: {
+      title: 'Submit Application',
+      workflow_state: 'submitted',
+      fields: [
+        /* ATTESTATION START */
+        {
+          name: 'salut-div',
+          title: 'Confirmation',
+          type: 'divider'
+        },
+        {
+          name: 'sign-name',
+          title: 'Your Name',
+          type: 'text',
+          access: {
+            read: [
+              'admins',
+              'underwriters',
+              'borrowers'
+            ],
+            modify: [
+              'admins',
+              'underwriters',
+              'borrowers'
+            ]
+          }
+        },
+        {
+          name: 'sign-title',
+          title: 'Your Title/Role',
+          type: 'text',
+          access: {
+            read: [
+              'admins',
+              'underwriters',
+              'borrowers'
+            ],
+            modify: [
+              'admins',
+              'underwriters',
+              'borrowers'
+            ]
+          }
+        },
+        {type: 'hidden'},
+        {
+          name: 'information-attestation',
+          title: 'I have completed all sections and certify the information is correct',
+          description: 'Please type your full name to certify',
+          type: 'signature',
+          access: {
+            read: [
+              'admins',
+              'underwriters',
+              'borrowers'
+            ],
+            modify: [
+              'admins',
+              'underwriters',
+              'borrowers'
+            ]
+          }
+        },
+        {
+          name: 'signature_date',
+          type: 'date',
+          title: 'Date',
+        },
+
+        /* ATTESTATION END */
+      ]
+    },
     "ppp2-closing": {
       title: 'PPP Note',
       description: 'Closing Documents',
@@ -345,12 +233,12 @@
       },
       fields: [
         {
-          name: 'sba_loan_number',
-          title: 'SBA Loan Number',
+          name: 'loan_number',
+          title: 'Loan Number',
           type: 'text',
           attributes: {required: true},
           pdfFormField: {
-            name: 'SBA Loan Number',
+            name: 'Loan Number',
             editable: 'lender_init', // possible values: 'lender_init', 'form_filler', 'signatory1', 'signatory2', ..., 'lender_signing'
             llx: 328.92,
             lly: 683.88,
@@ -640,366 +528,6 @@
         ]
       }
     },
-    "lender-info": {
-      title: 'Lender Info',
-      description: "This info will be used for SBA Form 2484 PDF generation",
-      fields: [
-        {
-          name: 'lender_name',
-          title: 'Lender Name',
-          type: 'text',
-          attributes: {required: true, maxlength: '39'}
-        },
-        {
-          name: 'lender_location_id',
-          title: 'Lender Location ID',
-          type: 'text',
-          attributes: {required: true, maxlength: '17'}
-        },
-        {
-          name: 'address',
-          title: 'Address',
-          type: 'text',
-          attributes: {required: true, maxlength: '30'}
-        },
-        {
-          name: 'city',
-          title: 'City',
-          type: 'text',
-          attributes: {required: true, maxlength: '16'}
-        },
-        {
-          name: 'state',
-          title: '2-Letter State Code',
-          type: 'text',
-          attributes: {required: true, maxlength: '2'}
-        },
-        {
-          name: 'zip',
-          title: 'Zip',
-          type: 'text',
-          attributes: {required: true, maxlength: '5'}
-        },
-        {
-          name: 'lender_contact',
-          title: 'Lender Contact',
-          type: 'text',
-          attributes: {required: true, maxlength: '19'}
-        },
-        {
-          name: 'phone',
-          title: 'Phone',
-          type: 'text',
-          attributes: {required: true, maxlength: '10'}
-        },
-        {
-          name: 'cell_or_ext',
-          title: 'Cell or Ext',
-          type: 'text',
-          attributes: {required: true, maxlength: '10'}
-        },
-        {
-          name: 'contact_email',
-          title: 'Contact Email',
-          type: 'text',
-          attributes: {required: true, maxlength: '31'}
-        },
-        {
-          name: 'title',
-          title: 'Title',
-          type: 'text',
-          attributes: {required: true, maxlength: '31'}
-        },
-      ],
-      access: {
-        read: [
-          'admins'
-        ],
-        modify: [
-          'admins'
-        ]
-      }
-    },
-    "ppp2-draw-application-addendum-a": {
-      title: 'Addendum A',
-      fields: [
-        {
-          name: 'affiliated-companies',
-          title: 'Affiliated Companies',
-          type: 'fieldset',
-          multiple: true,
-          fields: [
-            {
-              name: 'entity_name',
-              title: 'Entity Name',
-              type: 'text'
-            },
-            {
-              name: 'tax_id',
-              title: 'Tax ID#',
-              type: 'number'
-            },
-            {
-              name: 'ownership_percentage',
-              title: 'Ownership %',
-              type: 'number'
-            },
-            {
-              name: 'relationship_explanation',
-              title: 'Explanation of Principal\'s Relationship to Affiliated Business',
-              type: 'text'
-            },
-            {
-              name: 'number_of_employees',
-              title: 'Number of Employees',
-              type: 'number'
-            },
-            {
-              name: 'ppp_loan_amount',
-              title: 'Is this company applying for a PPP loan? If so for how much?',
-              type: 'number'
-            }
-          ],
-          access: {
-            read: [
-              'admins','users'
-            ],
-            modify: [
-              'admins','users'
-            ]
-          }
-        }
-      ]
-    },
-    "ppp2-draw-application-addendum-b": {
-      title: 'Addendum B',
-      description: "If the Borrower or any affiliated company of the Borrower has obtained an Economic\nInjury Disaster Loan (EIDL), Grant, or both, please give the details below",
-      fields: [
-        {
-          name: 'eidl_type',
-          title: 'EIDL Type',
-          type: 'select',
-          values: [{value: 'Loan'},{value: 'Grant'},{value: 'Both'}]
-        },
-        {
-          name: 'borrowing_entity',
-          title: 'Borrowing Entity',
-          type: 'text'
-        },
-        {
-          name: 'approval_date',
-          title: 'Approval Date',
-          type: 'date'
-        },
-        {
-          name: 'amount',
-          title: 'EIDL Amount / Grant Amount',
-          type: 'number'
-        },
-        {
-          name: 'use_of_proceeds',
-          title: 'Use of Proceeds',
-          type: 'textarea'
-        },
-        {
-          name: 'eidl_paid_off',
-          title: 'EIDL Paid off with this PPP Loan?',
-          type: 'select',
-          values: [{value: 'Yes'},{value: 'No'}]
-        }
-      ],
-      access: {
-        read: [
-          'admins','users'
-        ],
-        modify: [
-          'admins','users'
-        ]
-      }
-    },
-    "ppp-lender-review": {
-      title: 'Submit Lender Decision',
-      fields: [
-        {
-          name: 'borrower-return',
-          title: 'Return Application to Borrower',
-          type: 'select',
-          values: [
-            {title: 'No', value: ''},
-            {title: 'Yes', value:  'yes'}
-          ]
-        },
-        {
-          name: 'ppp-lender-decision',
-          title: 'Lender Decision',
-          type: 'select',
-          visibility: {
-            contains: {field: 'borrower-return', value: ''}
-          },
-          required: true,
-          values: [
-            {title: '-- none --',
-              value: ''
-            },
-            {
-              title: 'Approved in Full',
-              value: 'Approved in Full',
-            },
-            {
-              title: 'Approved in Part',
-              value: 'Approved in Part',
-
-            },
-            {
-              title: 'Denied',
-              value: 'Denied',
-            },
-            {
-              title: 'Denied without prejudice due to pending SBA review',
-              value: 'Denied without prejudice due to pending SBA review',
-            }
-          ],
-          access: {
-            read: [
-              'admins',
-              'managing-officers',
-              'loan-officers'
-            ],
-            modify: [
-              'admins',
-              'managing-officers',
-              'loan-officers'
-            ]
-          }
-        },
-        {
-          name: 'ppp-lender-confirmation',
-          title: 'Do you confirm the submission conditions above?',
-          type: 'select',
-          visibility: {
-            contains: {field: 'borrower-return', value: ''}
-          },
-          required: true,
-          multiple: true,
-          values: [
-            {
-              value: 'I Confirm'
-            }
-          ],
-          access: {
-            read: [
-              'admins',
-              'managing-officers',
-              'loan-officers'
-            ],
-            modify: [
-              'admins',
-              'managing-officers',
-              'loan-officers'
-            ]
-          }
-        },
-        {
-          name: 'ppp-lender-api-status',
-          title: 'SBA API Submission Status',
-          /* description: 'Note: this status will change automatically based on feedback from the SBA\n\n\n', */
-          type: 'text',
-
-          type: 'select',
-          values: [{value: 'Pending'},{value: 'Submitted'},{value: 'Approved'},{value: 'Declined'}],
-
-          access: {
-            read: [
-              'admins',
-              'managing-officers',
-              'loan-officers'
-            ],
-            modify: []
-          },
-          visibility: {
-            contains: {field: 'ppp-lender-confirmation', value: 'I Confirm'}
-
-          },
-          attributes: {placeholder: 'Pending'}
-        },
-        {
-          name: 'ppp-lender-api-message',
-          title: 'SBA API Submission Message',
-          /* description: 'Note: this status will change automatically based on feedback from the SBA\n\n\n', */
-          type: 'textarea',
-         
-          type: 'select',
-          values: [{value: 'Pending'},{value: 'Submitted'},{value: 'Approved'},{value: 'Declined'}],
-         
-          access: {
-            read: [
-              'admins',
-              'managing-officers',
-              'loan-officers'
-            ],
-            modify: []
-          },
-          visibility: {
-            contains: {field: 'ppp-lender-confirmation', value: 'I Confirm'}
-
-          },
-          attributes: {placeholder: ''}
-        },
-        {
-          name: 'clear-error',
-          title: 'Clear error and retry submission?',
-          type: 'select',
-          visibility: {
-            contains: {field: 'ppp-lender-api-status', value: 'Error while processing submission'}
-          },
-          required: true,
-          multiple: true,
-          values: [
-            {
-              value: 'Yes'
-            }
-          ],
-          access: {
-            read: [
-              'admins',
-              'managing-officers',
-              'loan-officers'
-            ],
-            modify: [
-              'admins',
-              'managing-officers',
-              'loan-officers'
-            ]
-          }
-        },
-        {
-          name: 'cancel-submission',
-          hint: 'Within 24hrs of submitting an application to the SBA it can be cancelled and resubmitted',
-          description: 'To cancel a submission select YES and click save, within the hour the application will be cancelled',
-          title: 'Cancel SBA Submission',
-          type: 'select',
-          visibility: {
-            contains: {field: 'ppp-lender-confirmation', value: 'I Confirm'}
-          },
-          values: [
-            {title: 'No', value: ''},
-            {title: 'Yes', value:  'yes'}
-          ]
-        },
-        {
-          name: 'ppp-lender-api-status-details',
-          type: 'hidden',
-          access: {
-            read: [
-              'admins',
-              'managing-officers',
-              'loan-officers'
-            ],
-            modify: []
-          },
-        },
-      ],
-    }
   },
   portfolio: {
     owners: [
@@ -1007,10 +535,6 @@
       'managing-officers',
       'loan-officers'
     ],
-    statuses: {
-      'ppp_origination': {title: 'Loan Status', name: 'origination_status'},
-      'ppp_forgiveness': {title: 'Forgiveness Status', name: 'forgiveness_status'}
-    },
     permissions: [
       {
         groups: [
@@ -1034,17 +558,12 @@
       }
     ],
     fields: [
-      {name: 'legal_name', type: 'text', title: 'Legal Name'},
+      {name: 'legal_name', type: 'text', title: 'Business Name'},
       {name: 'first_name', type: 'text', title: 'First Name'},
       {name: 'last_name', type: 'text', title: 'Last Name'},
       {name: 'email', type: 'email', title: 'Email'},
-      {name: 'business_phone', type: 'tel', title: 'Phone'},
+      {name: 'business_phone', type: 'tel', title: 'Phone Number'},
 
-      {name: 'ppp_loan_draw', type: 'text', title: 'Loan Selection'},
-      {name: 'loan_workflow_loan_amount', type: 'text', title: 'Loan Amount'},
-      {name: 'signature_date_2483', type: 'text', title: 'Borrower Submission Date'},
-      {name: 'ppp_loan_decision_date', type: 'date',title: 'SBA Decision Date'},
-      {name: 'loan_workflow_sba_loan', type: 'text', title: 'SBA Loan ID'}
     ]
   },
   invitations: {
@@ -1080,46 +599,74 @@
     },
     uniqueJoinField: 'legal_name',
     fields: [
-      {name: 'business_type', type: 'text', title: 'Business Type', hide: true},
-      {name: 'dba_tradename', type: 'text', title: 'DBA'},
-      {name: 'legal_name', type: 'text', title: 'Legal Name'},
-
-      {name: 'address_line_1', type: 'text', title: 'Address Line 1', hide: true},
-      {name: 'address_line_2', type: 'text', title: 'Address Line 2', hide: true},
-      {name: 'city', type: 'text', title: 'City', hide: true},
-      {name: 'state', type: 'text', title: 'State', hide: true},
-      {name: 'zip_code', type: 'text', title: 'Zip Code', hide: true, attributes: {pattern: '[0-9]{5}', oninvalid: "setCustomValidity('Please enter a valid 5 digit code (e.g. 12345).')", oninput: "setCustomValidity('')"}},
-      {name: 'zip_code_plus_4', type: 'text', title: 'Zip+4', hide: true, attributes: {pattern: '[0-9]{4}', oninvalid: "setCustomValidity('Please enter a valid 4 digit ZIP+4 code (e.g. 6789).')", oninput: "setCustomValidity('')"}},
-
-      {name: 'tin', type: 'text', title: 'Business TIN', hide: true, attributes: {pattern: '[0-9]{9}', oninvalid: "setCustomValidity('Please enter a valid 9 digit TIN number.')", oninput: "setCustomValidity('')"}},
-      {name: 'tin_type', type: 'text', title: 'TIN Type', hide: true},
-
-      {name: 'business_phone', type: 'tel', title: 'Phone'},
-      {name: 'first_name', type: 'text', title: 'First Name'},
-      {name: 'last_name', type: 'text', title: 'Last Name'},
-
-      {name: 'average_monthly_payroll', type: 'number', title: 'Average Monthly Payroll', hide: true},
-      {name: 'loan_amount', type: 'number', title: 'Loan Amount'},
-
-
-      {name: 'number_of_employees', type: 'text', title: 'Number of Employees', hide: true},
-      {name: 'fd_question_1', type: 'text', title: 'Question 1', hide: true},
-      {name: 'fd_question_2', type: 'text', title: 'Question 2', hide: true},
-      {name: 'fd_question_5', type: 'text', title: 'Question 5', hide: true},
-      {name: 'fd_question_6', type: 'text', title: 'Question 6', hide: true},
-      {name: 'fd_question_7', type: 'text', title: 'Question 7', hide: true},
-
-      {name: 'ppp_first_draw_sba_loan_number', type: 'text', title: 'PPP First Draw SBA Loan Number', hide: true},
-      {name: 'period_1_quarter', type: 'text', title: '2020 Quarter', hide: true},
-      {name: 'period_1_revenue', type: 'number', title: '2020 Quarter Gross Receipts', hide: true},
-      {name: 'period_2_quarter', type: 'text', title: '2019 Reference Quarter', hide: true},
-      {name: 'period_2_revenue', type: 'number', title: '2019 Reference Quarter Gross Receipts', hide: true},
-
-      {name: 'sd_question_1', type: 'number', title: 'Second Draw Question 1', hide: true},
-      {name: 'sd_question_2', type: 'number', title: 'Second Draw Question 2', hide: true},
-      {name: 'sd_question_4', type: 'number', title: 'Second Draw Question 4', hide: true},
-      {name: 'sd_question_5', type: 'number', title: 'Second Draw Question 5', hide: true},
-      {name: 'sd_question_6', type: 'number', title: 'Second Draw Question 6', hide: true},
+      {name: 'company-legal-name', type: 'text', title: 'Company Legal Name (optional)' , description: 'Needed if inviting one person to manage multiple companies', 'sync': {field: 'Account_Name'}},
+      {
+        name: 'div-biz-info',
+        title: 'Requested Business Information',
+        type: 'divider',
+        description: 'Select the documents and data you would like your client to provide',
+      },
+      {
+        name: 'info-statements',
+        title: 'Information / Statements',
+        type: 'select',
+        typeDisplay: 'full',
+        multiple: true,
+        values: [
+          {
+            value: 'profit_loss',
+            title: 'Profit and Loss (YTD)'
+          },
+          {
+            value: 'balance_sheet',
+            title: 'Balance Sheet (YTD)'
+          },
+          /*{value: 'cash_flow', title:'Cash Flow Statement'},
+          {value: 'bank_balances',title: 'Bank Balances and Transactions'},*/
+          {
+            value: 'bank_transfer',
+            title: 'Banking Transfer Information'
+          },
+          {
+            value: 'irs_1120',
+            title: 'IRS Business Tax Form 1120'
+          },
+          {
+            value: 'cra_t2',
+            title: 'CRA T2 Corporation Income Tax Return'
+          },
+          {
+            value: 'prepared_financials',
+            title: 'Accountant Prepared Financial Statements'
+          },
+          {
+            value: 'cash_flow_forecast',
+            title: 'Cash Flow Forecast'
+          },
+          {
+            value: 'notice_of_assessment',
+            title: 'Notice of Assessment (previous 2 years)'
+          },
+          // previous 2 years
+          {
+            value: 'cra_pd7a',
+            title: 'PD7A Statement of Account for Source Deductions'
+          },
+          {
+            value: 'bank_statements',
+            title: 'Bank Statements (previous 2 months)'
+          },
+          // from last 2 months
+          {
+            value: 'certificate_of_incorporation',
+            title: 'Certificate of Incorporation'
+          },
+          {
+            value: 'articles_of_incorporation',
+            title: 'Articles of Incorporation'
+          }
+        ],
+      },
     ],
     status: [
       {
