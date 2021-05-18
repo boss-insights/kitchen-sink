@@ -123,17 +123,7 @@ $(document).ready(function () {
                 name: '4.1 Payroll',
                 app: 'company/payrolls',
                 icon: 'caret-right',
-                hint: 'Step 4.1: This section gathers payroll information including cash compensation, hours and wages as required by SBA form 3508 Schedule A. Depending on your earlier inputs in Step 2, the information may be pre-filled. Please review it and correct if necessary. Note: All dollar amounts are assumed to be in USD. If you are using a different currency, please convert to USD amounts.\n' /* +
-                    '1. Choose your pay frequency and pay period start date(s).\n' +
-                    '2. Your covered period will be pre-filled using your loan disbursement date. Verify the accuracy of your payroll data auto pulled from Step 2.2 and edit if necessary.\n' +
-                    '3. Scroll to “Other Cash Compensation” and add the non-wage and non-salary cash compensations. This includes tips, commissions, bonuses, etc.\n' +
-                    '4. Please check the following checkboxes regarding wage reductions and average paid hours reduction if they apply to you. Depending on your choices, the following two tables may be disabled as they may not be required for the application.\n' +
-                    '5. Your safe harbour data has been prefilled, please review and correct if necessary.\n' +
-                    '6. Choose a reference period in the dropdown menu titled “Reference Period Start”.  SBA form 3508 provides three potential reference periods and they are included in the drop down menu. \n' +
-                    '7. Please review the calculated totals at the bottom of the page and continue to the the next step.\n\n' +
-                    'Average FTE: This calculates the average full-time equivalency (FTE) during the Covered Period or the Alternative Payroll Covered Period. The maximum for each employee is capped at 1.0. The SBA has provided two different calculation methods to choose from. Our system will calculate the Average FTE using both calculation methods and automatically use whichever one results in the highest forgiveness amount.\n' +
-                    '1. Standard Calculation: For each employee, enter the average number of hours paid per week, divide by 40, and round the total to the nearest tenth. \n' +
-                    '2. Simplified Calculation: A simplified method that assigns a 1.0 for employees who work 40 hours or more per week and 0.5 for employees who work fewer hours may be used at the election of the Borrower.\n' */
+                hint: 'Step 4.1: This section gathers payroll information including cash compensation, hours and wages as required by SBA form 3508 Schedule A. Depending on your earlier inputs in Step 2, the information may be pre-filled. Please review it and correct if necessary. Note: All dollar amounts are assumed to be in USD. If you are using a different currency, please convert to USD amounts.\n'
             },{
                 name: '4.2 Expenses',
                 app: 'company/expenses',
