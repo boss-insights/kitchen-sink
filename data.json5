@@ -48,6 +48,20 @@
         ],
         attributes: {required: true},
       },
+      {type: 'hidden'},
+      {
+        name: 'business_website',
+        type: 'url',
+        title: 'Business\'s Website address',
+        attributes: {placeholder: 'https://example.com', pattern: 'https://.*"', size:'30'}
+      },
+      {
+        name: 'business_website_date',
+        type: 'month',
+        title: 'Publishing Date '
+      },
+
+
       {
         name: 'heard_other',
         type: 'text',
@@ -122,12 +136,31 @@
         attributes: {required: true},
       },
       {
-        name: 'loan_amout',
+        name: 'loan_amount',
         type: 'money',
         title: 'How much funding do you need?',
         attributes: {required: true}
       },
 
+      {type: 'divider', title: 'Additional Information' },
+
+      { name: 'revenue_decrease',
+        type: 'select',
+        title: 'Which quarters did you experience a 50% or more decrease in revenue in 2020, compared to the same quarters in 2019?',
+        multiple: true,
+        typeDisplay: 'full',
+        values: [
+          {title: 'Q1 - Q2 (January - June)', value: 'Q1-2'},
+          {title: 'Q3 - Q4 (July - December)', value: 'Q3-4'},
+          {title:  'None', value:  'None'},
+        ]
+      },
+      {
+        name: 'revenue_text',
+        type: 'textarea',
+        title: 'If you checked any box from the previous question other than "None", please elaborate on what you believe to be the main causes of the revenue\'s decrease.',
+        attributes: {style:  'min-height: 80%;'}
+      },
 
       {type: 'divider', title: 'Other' },
       {type: 'hidden'},
