@@ -23,6 +23,11 @@ small.extraInfo a{color:#333; text-decoration:underline;}
     display: none;
 }
 
+button#snapshotButton.btn-outline-secondary.btn-block:hover {
+    background-color: #35404e;
+    color: #fff;
+}
+
 body[data-sa-theme="13"] header div.logo {
     background-color: #341e7e;
 }
