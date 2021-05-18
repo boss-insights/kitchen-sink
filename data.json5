@@ -904,10 +904,10 @@
           title: 'SBA API Submission Status',
           /* description: 'Note: this status will change automatically based on feedback from the SBA\n\n\n', */
           type: 'text',
-          /*
+
           type: 'select',
           values: [{value: 'Pending'},{value: 'Submitted'},{value: 'Approved'},{value: 'Declined'}],
-          */
+
           access: {
             read: [
               'admins',
@@ -927,10 +927,10 @@
           title: 'SBA API Submission Message',
           /* description: 'Note: this status will change automatically based on feedback from the SBA\n\n\n', */
           type: 'textarea',
-          /*
+         
           type: 'select',
           values: [{value: 'Pending'},{value: 'Submitted'},{value: 'Approved'},{value: 'Declined'}],
-          */
+         
           access: {
             read: [
               'admins',
@@ -1097,7 +1097,6 @@
       {name: 'business_phone', type: 'tel', title: 'Phone'},
       {name: 'first_name', type: 'text', title: 'First Name'},
       {name: 'last_name', type: 'text', title: 'Last Name'},
-      // {name: 'email', type: 'email', title: 'Email'}, // email is included by default
 
       {name: 'average_monthly_payroll', type: 'number', title: 'Average Monthly Payroll', hide: true},
       {name: 'loan_amount', type: 'number', title: 'Loan Amount'},
@@ -1123,7 +1122,6 @@
       {name: 'sd_question_6', type: 'number', title: 'Second Draw Question 6', hide: true},
     ],
     status: [
-      // Pending workflow status
       {
         value: 'new',
         title: 'New'
