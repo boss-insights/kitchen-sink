@@ -1,192 +1,510 @@
-/* ORIGINATION AND FORGIVENESS COMBINED */
+/* Bright Lend Configuration */
 {
   profile: {
-    title: '',
-
+    title: 'Information',
     fields: [
-      {type: 'divider', title: 'Client Information'},
-
-      {type: 'hidden'},
-
       {
-        name: 'first_name',
-        type: 'text',
-        title: 'First Name',
-        attributes: {required: true},
-      },
-      {
-        name: 'last_name',
-        type: 'text',
-        title: 'Last Name',
-        attributes: {required: true},
-      },
-      {
-        name: 'email',
-        type: 'email',
-        title: 'Email',
-        attributes: {required: true},
-      },
-      {
-        name: 'business_phone',
-        type: 'tel',
-        title: 'Phone Number',
-        attributes: {required: true, pattern:'[0-9]{3}-[0-9]{3}-[0-9]{4}', oninvalid: "setCustomValidity('Please enter a valid phone number (123-456-7890).')", oninput: "setCustomValidity('')" },
-        hint: 'A valid phone number follows the XXX-XXX-XXXX format',
-      },
-      {
-        name: 'heard_about_us',
+        name: 'info-statements',
+        title: 'Information / Statements',
         type: 'select',
-        title: 'How did you hear about us?',
-        multiple: false,
-        typeDisplay: 'select',
-        values: [
-          {title: '', value: ''},
-          {title:  'LinkedIn', value: 'linkedin'},
-          {title:  'Facebook/Instagram', value: 'facebook_instagram'},
-          {title: 'Referral', value:  'referral'},
-          {title: 'Other', value:  'other'},
-        ],
-        attributes: {required: true},
-      },
-      {type: 'hidden'},
-      {
-        name: 'business_website',
-        type: 'url',
-        title: 'Business\'s Website address',
-        attributes: {placeholder: 'https://example.com', pattern: 'https://.*"', size:'30'}
-      },
-      {
-        name: 'business_website_date',
-        type: 'month',
-        title: 'Publishing Date '
-      },
-
-
-      {
-        name: 'heard_other',
-        type: 'text',
-        title: 'Please share how you heard about us',
-        visibility: {
-          contains: {field: 'heard_about_us', value: 'other'}
-        }
-      },
-
-      {type: 'divider', title: 'Business Information'},
-      {type: 'hidden'},
-
-      {
-        name: 'business_type',
-        type: 'select',
-        title: 'Business Type',
-        typeDisplay: 'select',
-        values: [
-          {title: '', value: ''},
-          {title:  'LLC', value: 'LLC'},
-          {title:  'Partnership', value: 'Partnership'},
-          {title:  'S-Corp', value: 'S-Corp'},
-          {title:  'Sole Proprietorship', value: 'Sole Proprietorship'},
-          {title:  'C-Corp', value: 'C-Corp'},
-        ],
-        attributes: {required: true},
-      },
-      {
-        name: 'legal_name',
-        type: 'text',
-        title: 'Business Name',
-      },
-      {
-        name: 'tin',
-        type: 'text',
-        title: 'EIN Number',
-        attributes: {pattern: '[0-9]{9}', oninvalid: "setCustomValidity('Please enter a valid 9 digit EIN number.')", oninput: "setCustomValidity('')"},
-      },
-      {
-        name: 'address_line_1',
-        type: 'text',
-        title: 'Address Line 1',
-        attributes: {required: true},
-      },
-      {
-        name: 'address_line_2',
-        type: 'text',
-        title: 'Address Line 2',
-      },
-      {
-        name: 'city',
-        type: 'text',
-        title: 'City',
-        attributes: {required: true},
-      },
-      {
-        name: 'state',
-        type: 'text',
-        title: 'State',
-        attributes: {required: true},
-      },
-      {
-        name: 'zip_code',
-        type: 'text',
-        title: 'Zip Code',
-        attributes: {required: true, pattern: '(\\d{5}([\\-]\\d{4})?)', oninvalid: "setCustomValidity('Please enter a valid zip code(12345 or 12345-6789).')", oninput: "setCustomValidity('')"},
-      },
-      {
-        name: 'number_employees',
-        type: 'number',
-        title: 'How many employees do you have?',
-        attributes: {required: true},
-      },
-      {
-        name: 'loan_amount',
-        type: 'money',
-        title: 'How much funding do you need?',
-        attributes: {required: true}
-      },
-
-      {type: 'divider', title: 'Additional Information' },
-
-      { name: 'revenue_decrease',
-        type: 'select',
-        title: 'Which quarters did you experience a 50% or more decrease in revenue in 2020, compared to the same quarters in 2019?',
-        multiple: true,
         typeDisplay: 'full',
-        values: [
-          {title: 'Q1 - Q2 (January - June)', value: 'Q1-2'},
-          {title: 'Q3 - Q4 (July - December)', value: 'Q3-4'},
-          {title:  'None', value:  'None'},
-        ]
-      },
-      {
-        name: 'revenue_text',
-        type: 'textarea',
-        title: 'If you checked any box from the previous question other than "None", please elaborate on what you believe to be the main causes of the revenue\'s decrease.',
-        attributes: {style:  'min-height: 80%;'}
-      },
-
-      {type: 'divider', title: 'Other' },
-      {type: 'hidden'},
-
-      {
-        name: 'other_notes',
-        type: 'textarea',
-        title: 'Other Notes',
-        description: '(Optional)'
-      },
-      {
-        name: 'other_files',
-        type: 'file',
-        title: 'Other Files',
         multiple: true,
-        description: '(Optional)',
+        values: [
+          {value: 'profit_loss', title: 'Profit and Loss'},
+          {value: 'balance_sheet',title: 'Balance Sheet'},
+          /*{value: 'cash_flow', title:'Cash Flow Statement'},
+          {value: 'bank_balances',title: 'Bank Balances and Transactions'},*/
+          {value: 'bank_transfer',title: 'Banking Transfer Information'},
+          {value: 'irs_1120',title: 'IRS Business Tax Form 1120'},
+//          {value: 'cra_t2',title: 'CRA T2 Corporation Income Tax Return'},
+          {value: 'prepared_financials',title: 'Prepared Financial Statements'},
+          {value: 'cash_flow_forecast', title: 'Cash Flow Forecast'}
+        ],
         access: {
-          read: ['admins', 'managing-officers', 'loan-officers'],
-          modify: ['admins', 'managing-officers', 'loan-officers']
+          read: [
+            'users'
+          ],
+          modify: [
+            'parent:::admins'
+          ],
+          readHide: true
         }
       },
+      /*{
+        name: 'metrics-ratios',
+        title: 'Metrics / Ratios',
+        type: 'select',
+        multiple: true,
+        values: [
+          {value: 'financial-ratios', title: 'Financial Ratios (A/R, Gross Margin, Net Margin'},
+          {value: 'debt-ratios',title: 'Debt Ratios - DSCR, LTV'},
+          {value: 'sales-forecast', title:'Sales & Forecast'},
+
+          {value: 'ar-performance',title: 'A/R Performance'}
+        ],
+        access: {
+          read: [
+            'users'
+          ],
+          modify: [
+            'parent:::admins'
+          ],
+          readHide: true
+        }
+      },*/
+
+      {
+        name: 'company-legal-name',
+        title: 'Company Legal Name',
+        // description: 'Should match any incorporation documents',
+        type: 'text',
+        sync: {
+          push: false,
+          pull: false,
+          entity: 'accounts',
+          field: 'Account_Name'
+        },
+        access: {
+          read: [
+            'admins','underwriters','borrowers'
+          ],
+          modify: [
+            'admins'
+          ]
+        }
+      },
+      {
+        name: 'website',
+        title: 'Website',
+        type: 'text',
+        sync: {
+          push: false,
+          pull: false,
+          entity: 'accounts',
+          field: 'Website'
+        },
+        attributes: {
+          placeholder: 'https://www.mycompany.com'
+        },
+        access: {
+          read: [
+            'admins','underwriters','borrowers'
+          ],
+          modify: [
+            'admins','underwriters','borrowers'
+          ]
+        }
+      },
+      {
+        name: 'certificate-of-incorporation',
+        title: 'Certificate of Incorporation',
+        type: 'file',
+        accept: '.pdf',
+        access: {
+          read: [
+            'admins','underwriters','borrowers'
+          ],
+          modify: [
+            'admins','underwriters','borrowers'
+          ]
+        },
+        visibility: {
+          contains: {field: 'info-statements', value: 'certificate_of_incorporation'}
+        }
+      },
+      {
+        name: 'articles-of-incorporation',
+        title: 'Articles of Incorporation',
+        type: 'file',
+        accept: '.pdf',
+        access: {
+          read: [
+            'admins','underwriters','borrowers'
+          ],
+          modify: [
+            'admins','underwriters','borrowers'
+          ]
+        },
+        visibility: {
+          contains: {field: 'info-statements', value: 'articles_of_incorporation'}
+        }
+      },
+      {
+        name: 'bank-statements',
+        title: 'Bank Statements (previous 2 months)',
+        type: 'file',
+        accept: '.pdf',
+        multiple: true,
+        access: {
+          read: [
+            'admins','underwriters','borrowers'
+          ],
+          modify: [
+            'admins','underwriters','borrowers'
+          ]
+        },
+        visibility: {
+          contains: {field: 'info-statements', value: 'bank_statements'}
+        }
+      },
+      {
+        name: 'notice-of-assessment',
+        title: 'Notice of Assessment (previous 2 years)',
+        type: 'file',
+        accept: '.pdf',
+        multiple: true,
+        access: {
+          read: [
+            'admins','underwriters','borrowers'
+          ],
+          modify: [
+            'admins','underwriters','borrowers'
+          ]
+        },
+        visibility: {
+          contains: {field: 'info-statements', value: 'notice_of_assessment'}
+        }
+      },
+      /*
+      {
+        name: 'address',
+        title: 'Physical Address',
+        type: 'address',
+        access: {
+          read: [
+            'admins','underwriters','borrowers'
+          ],
+          modify: [
+            'admins','underwriters','borrowers'
+          ]
+        }
+      },*/
+
+      /* BANK INFO START */
+      {
+        name:'div-bank',
+        title:'Banking Information',
+        type: 'divider',
+        visibility: {
+          contains: {field: 'info-statements', value: 'bank_transfer'}
+        }
+      },
+      {
+        name: 'bank-name',
+        title: 'Bank Name',
+        type: 'text',
+        access: {
+          read: [
+            'admins','underwriters','borrowers'
+          ],
+          modify: [
+            'admins','underwriters','borrowers'
+          ]
+        },
+        visibility: {
+          contains: {field: 'info-statements', value: 'bank_transfer'}
+        }
+      },
+      {
+        name: 'branch-address-street',
+        title: 'Street Address',
+        type: 'text',
+        access: {
+          read: [
+            'admins','underwriters','borrowers'
+          ],
+          modify: [
+            'admins','underwriters','borrowers'
+          ]
+        },
+        visibility: {
+          contains: {field: 'info-statements', value: 'bank_transfer'}
+        }
+      },
+      {
+        name: 'branch-address-city',
+        title: 'City',
+        type: 'text',
+        access: {
+          read: [
+            'admins','underwriters','borrowers'
+          ],
+          modify: [
+            'admins','underwriters','borrowers'
+          ]
+        },
+        visibility: {
+          contains: {field: 'info-statements', value: 'bank_transfer'}
+        }
+      },
+      {
+        name: 'branch-address-postcode',
+        title: 'Postal Code',
+        type: 'text',
+        access: {
+          read: [
+            'admins','underwriters','borrowers'
+          ],
+          modify: [
+            'admins','underwriters','borrowers'
+          ]
+        },
+        visibility: {
+          contains: {field: 'info-statements', value: 'bank_transfer'}
+        }
+      },
+      {
+        name: 'branch-address-country',
+        title: 'Country',
+        type: 'text',
+        access: {
+          read: [
+            'admins','underwriters','borrowers'
+          ],
+          modify: [
+            'admins','underwriters','borrowers'
+          ]
+        },
+        visibility: {
+          contains: {field: 'info-statements', value: 'bank_transfer'}
+        }
+      },
+      {
+        name: 'institution-number',
+        title: 'Institution Number',
+        type: 'number',
+        access: {
+          read: [
+            'admins','underwriters','borrowers'
+          ],
+          modify: [
+            'admins','underwriters','borrowers'
+          ]
+        },
+        visibility: {
+          contains: {field: 'info-statements', value: 'bank_transfer'}
+        }
+      },
+      {
+        name: 'transit-number',
+        title: 'Transit Number',
+        type: 'number',
+        access: {
+          read: [
+            'admins','underwriters','borrowers'
+          ],
+          modify: [
+            'admins','underwriters','borrowers'
+          ]
+        },
+        visibility: {
+          contains: {field: 'info-statements', value: 'bank_transfer'}
+        }
+      },
+      {
+        name: 'account-number',
+        title: 'Account Number',
+        type: 'number',
+        access: {
+          read: [
+            'admins','underwriters','borrowers'
+          ],
+          modify: [
+            'admins','underwriters','borrowers'
+          ]
+        },
+        visibility: {
+          contains: {field: 'info-statements', value: 'bank_transfer'}
+        }
+      },
+      /* BANK INFO END */
+
+      /* TAX FORMS START*/
+      {
+        name:'div-tax',
+        title:'Tax Returns',
+        type:'divider',
+        visibility: {
+          contains: {field: 'info-statements', value: 'cra_t2,irs_1120'}
+        }
+      },
+      {
+        name: 'cra_t2',
+        title: 'CRA T2 Corporation Income Tax Return',
+        type: 'file',
+        accept: '.pdf',
+        multiple: true,
+        access: {
+          read: [
+            'admins','underwriters','borrowers'
+          ],
+          modify: [
+            'admins','underwriters','borrowers'
+          ]
+        },
+        visibility: {
+          contains: {field: 'info-statements', value: 'cra_t2'}
+        }
+      },
+      {
+        name: 'irs_1120',
+        title: 'IRS Business Tax Form 1120',
+        type: 'file',
+        accept: '.pdf',
+        multiple: true,
+        access: {
+          read: [
+            'admins','underwriters','borrowers'
+          ],
+          modify: [
+            'admins','underwriters','borrowers'
+          ]
+        },
+        visibility: {
+          contains: {field: 'info-statements', value: 'irs_1120'}
+        }
+      },
+
+      /* TAX FORMS END */
+
+
+      /* CASHFLOW FORECAST START */
+      {
+        name:'div-cash-flow',
+        title:'Cash Flow Forecast',
+        type:'divider',
+        visibility: {
+          contains: {field: 'info-statements', value: 'cash_flow_forecast'}
+        }
+      },
+      {
+        name: 'cashflow-forecast',
+        title: '12 month forecast Excel/CSV file',
+        type: 'file',
+        accept: '.xls,.xlsx,.csv',
+        access: {
+          read: [
+            'admins','underwriters','borrowers'
+          ],
+          modify: [
+            'admins','underwriters','borrowers'
+          ]
+        },
+        visibility: {
+          contains: {field: 'info-statements', value: 'cash_flow_forecast'}
+        }
+      },
+      {
+        name: 'forecast-justification',
+        title: 'Notes and Justification',
+        type: 'textarea',
+        access: {
+          read: [
+            'admins','underwriters','borrowers'
+          ],
+          modify: [
+            'admins','underwriters','borrowers'
+          ]
+        },
+        visibility: {
+          contains: {field: 'info-statements', value: 'cash_flow_forecast'}
+        }
+      },
+
+      /* CASHFLOW FORECAST END */
+
+      /* FINANCIAL STATEMENTS START */
+      {
+        name:'div-fs1',
+        title:'Accountant Prepared Financial Statements',
+        type:'divider',
+        visibility: {
+          contains: {field: 'info-statements', value: 'prepared_financials'}
+        }
+      },
+      {
+        name: 'financial-statements',
+        title: 'Financial Statement',
+        type: 'fieldset',
+        multiple: true,
+        fields: [
+          {
+            name: 'fs-upload',
+            title: 'File upload',
+            type: 'file',
+            accept: '.pdf',
+            multiple: false
+          },
+          {
+            name: 'fs-year',
+            title: 'Year',
+            type: 'number',
+            attributes: {min: '2010',max: '2050'}
+          },
+
+          {
+            name: 'fs-name',
+            title: 'Accountant Name',
+            type: 'text'
+          },
+          {
+            name: 'fs-email',
+            title: 'Accountant Email',
+            type: 'email'
+          }
+        ],
+        access: {
+          read: [
+            'admins','underwriters','borrowers'
+          ],
+          modify: [
+            'admins','underwriters','borrowers'
+          ]
+        },
+        visibility: {
+          contains: {field: 'info-statements', value: 'prepared_financials'}
+        }
+      },
+      /* FINANCIAL STATEMENTS END */
+
+
+
     ]
   },
+
   forms: {
+    /*
+    requirements: {
+      title: 'Required Information',
+      fields: [
+        {name: 'test-field'}
+      ]
+    },*/
+    forecasts: {
+      title: 'Forecasts',
+      fields: [
+        {
+          name: 'forecast-table',
+          //          title: 'Forecast Table',
+          type: 'table',
+          columnSeries: {
+            start: '2020-09-01',
+            frequency: 'monthly',
+            count: 24,
+            format: 'M \'y'
+          },
+          rowHeaders: [
+            {name: 'revenue', title: 'Revenue'},
+            {name: 'opex', title: 'Operating Expenses'},
+            {name: 'gross-margin', title: 'Gross Margin'},
+            {name: 'ebitda', title: 'EBITDA'},
+          ],
+          datatable:  true,
+        },
+      ]
+    },
     submit: {
-      title: 'Submit Application',
+      title: 'Submit Information',
       workflow_state: 'submitted',
       fields: [
         /* ATTESTATION START */
@@ -199,6 +517,9 @@
           name: 'sign-name',
           title: 'Your Name',
           type: 'text',
+          attributes: {
+            required: true
+          },
           access: {
             read: [
               'admins',
@@ -216,6 +537,9 @@
           name: 'sign-title',
           title: 'Your Title/Role',
           type: 'text',
+          attributes: {
+            required: true
+          },
           access: {
             read: [
               'admins',
@@ -229,12 +553,14 @@
             ]
           }
         },
-        {type: 'hidden'},
         {
           name: 'information-attestation',
           title: 'I have completed all sections and certify the information is correct',
           description: 'Please type your full name to certify',
           type: 'signature',
+          attributes: {
+            required: true
+          },
           access: {
             read: [
               'admins',
@@ -247,391 +573,77 @@
               'borrowers'
             ]
           }
-        },
-        {
-          name: 'signature_date',
-          type: 'date',
-          title: 'Date',
-        },
+        }
 
         /* ATTESTATION END */
       ]
-    },
-    "ppp2-closing": {
-      title: 'PPP Note',
-      description: 'Closing Documents',
-      pdfFormFile: {
-        'path': 'ppp2_closing/',
-        'file': '' // @TODO create/map sample doc?
-      },
-      fields: [
-        {
-          name: 'loan_number',
-          title: 'Loan Number',
-          type: 'text',
-          attributes: {required: true},
-          pdfFormField: {
-            name: 'Loan Number',
-            editable: 'lender_init', // possible values: 'lender_init', 'form_filler', 'signatory1', 'signatory2', ..., 'lender_signing'
-            llx: 328.92,
-            lly: 683.88,
-            width: 82.08,
-            height: 10.44
-          }
-        },
-        {
-          name: 'bank_loan_number',
-          title: 'Bank Loan Number',
-          type: 'text',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'Bank Loan Number',
-            editable: 'lender_init'
-          }
-        },
-        {
-          name: 'borrower_tax_id',
-          title: 'Borrower\'s Tax ID # (EIN/SSN)',
-          type: 'text',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'Borrower s Tax ID  EINSSN',
-            editable: 'lender_init'
-          }
-        },
-        {
-          name: 'loan_date',
-          title: 'Loan Date',
-          type: 'text',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'Loan Date',
-            editable: 'lender_init'
-          }
-        },
-        {
-          name: 'loan_amount',
-          title: 'Loan Amount',
-          type: 'text',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'Loan Amount',
-            editable: 'lender_init'
-          }
-        },
-        {
-          name: 'borrower',
-          title: 'Borrower',
-          type: 'textarea',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'Borrower',
-            editable: 'lender_init'
-          }
-        },
-        {
-          name: 'principal_amount',
-          title: 'Loan Amount',
-          type: 'text',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'principal amount',
-            editable: 'lender_init'
-          }
-        },
-        {
-          name: 'borrower_name',
-          title: 'Borrower',
-          type: 'text',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'Borrower Name',
-            editable: 'lender_init'
-          }
-        },
-        {
-          name: 'name1',
-          title: 'Name',
-          type: 'text',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'Name_1',
-            editable: 'signatory1'
-          }
-        },
-        {
-          name: 'title1',
-          title: 'Title',
-          type: 'text',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'e_1',
-            editable: 'signatory1'
-          }
-        },
-        {
-          name: 'signature1',
-          title: 'Signature',
-          type: 'signature',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'Signature_1',
-            editable: 'signatory1'
-          }
-        },
-        {
-          name: 'name2',
-          title: 'Name',
-          type: 'text',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'Name_2',
-            editable: 'signatory2'
-          }
-        },
-        {
-          name: 'title2',
-          title: 'Title',
-          type: 'text',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'e_2',
-            editable: 'signatory2'
-          }
-        },
-        {
-          name: 'signature2',
-          title: 'Signature',
-          type: 'signature',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'Signature_2',
-            editable: 'signatory2'
-          }
-        },
-        {
-          name: 'name3',
-          title: 'Name',
-          type: 'text',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'Name_3',
-            editable: 'signatory3'
-          }
-        },
-        {
-          name: 'title3',
-          title: 'Title',
-          type: 'text',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'e_3',
-            editable: 'signatory3'
-          }
-        },
-        {
-          name: 'signature3',
-          title: 'Signature',
-          type: 'signature',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'Signature_3',
-            editable: 'signatory3'
-          }
-        },
-        {
-          name: 'name4',
-          title: 'Name',
-          type: 'text',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'Name_4',
-            editable: 'signatory4'
-          }
-        },
-        {
-          name: 'title4',
-          title: 'Title',
-          type: 'text',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'e_4',
-            editable: 'signatory4'
-          }
-        },
-        {
-          name: 'signature4',
-          title: 'Signature',
-          type: 'signature',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'Signature_4',
-            editable: 'signatory4'
-          }
-        },
-        {
-          name: 'name5',
-          title: 'Name',
-          type: 'text',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'Name_5',
-            editable: 'signatory5'
-          }
-        },
-        {
-          name: 'title5',
-          title: 'Title',
-          type: 'text',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'e_5',
-            editable: 'signatory5'
-          }
-        },
-        {
-          name: 'signature5',
-          title: 'Signature',
-          type: 'signature',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'Signature_5',
-            editable: 'signatory5'
-          }
-        },
-        {
-          name: 'legal_name',
-          title: 'Legal Name',
-          type: 'text',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'legal name',
-            editable: 'lender_init'
-          }
-        },
-        {
-          name: 'print_name',
-          title: 'Print Name',
-          type: 'text',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'Print Name',
-            editable: 'signatory1'
-          }
-        },
-        {
-          name: 'title',
-          title: 'Title',
-          type: 'text',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'Title',
-            editable: 'signatory1'
-          }
-        },
-        {
-          name: 'signature',
-          title: 'Authorized Signer for the Company',
-          type: 'signature',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'Authorized Signer for the Company',
-            editable: 'signatory1'
-          }
-        },
-        {
-          name: 'todays_date',
-          title: 'Today\'s Date',
-          type: 'text',
-          attributes: {required: true},
-          pdfFormField:{
-            name: 'Todays Date',
-            editable: 'signatory1'
-          }
-        },
-      ],
-      access: {
-        read: [
-          'admins',
-          'users'
-        ],
-        modify: [
-          'admins',
-          'users'
-        ]
-      }
-    },
+    }
   },
+
   portfolio: {
     owners: [
       'admins',
-      'managing-officers',
-      'loan-officers'
+      'managers',
+      'users'
     ],
     permissions: [
       {
         groups: [
           'admins',
-          'managing-officers'
+          'managers'
         ],
         access: {
           view: 'all',
-          add: true,
           edit: true
         }
       },
       {
         groups: [
-          'loan-officers'
+          'users'
         ],
         access: {
-          view: 'own',
-          add: true
+          view: 'own'
         }
       }
     ],
     fields: [
-      {name: 'legal_name', type: 'text', title: 'Business Name'},
-      {name: 'first_name', type: 'text', title: 'First Name'},
-      {name: 'last_name', type: 'text', title: 'Last Name'},
-      {name: 'email', type: 'email', title: 'Email'},
-      {name: 'business_phone', type: 'tel', title: 'Phone Number'},
+
+      {name: 'company-legal-name', type: 'text', title: 'Company'},
+      {name: 'business-number', type: 'text', title: 'Number'},
+      {name: 'primary-contact', type: 'email', title: 'Contact'},
+      /*{name: '@months_liquidity', type: 'text', title: 'Liquidity'}*/
 
     ]
   },
   invitations: {
+    uniqueJoinField: 'company-legal-name',
     owners: [
       'admins',
-      'managing-officers',
-      'loan-officers'
+      'managers',
+      'users'
     ],
     permissions: [
       {
         groups: [
           'admins',
-          'managing-officers'
+          'managers'
         ],
         access: {
           view: 'all',
-          add: true,
+          add: true
         }
       },
       {
         groups: [
-          'loan-officers'
+          'users'
         ],
         access: {
-          view: 'own',
-          add: true
+          view: 'own'
         }
       }
     ],
-    access: {
-      read: ['admins', 'managing-officers', 'loan-officers'],
-      modify: ['admins', 'managing-officers', 'loan-officers']
-    },
-    uniqueJoinField: 'legal_name',
     fields: [
+
       {name: 'company-legal-name', type: 'text', title: 'Company Legal Name (optional)' , description: 'Needed if inviting one person to manage multiple companies', 'sync': {field: 'Account_Name'}},
       {
         name: 'div-biz-info',
@@ -646,62 +658,39 @@
         typeDisplay: 'full',
         multiple: true,
         values: [
-          {
-            value: 'profit_loss',
-            title: 'Profit and Loss (YTD)'
-          },
-          {
-            value: 'balance_sheet',
-            title: 'Balance Sheet (YTD)'
-          },
+          {value: 'profit_loss', title: 'Profit and Loss (YTD)'},
+          {value: 'balance_sheet',title: 'Balance Sheet (YTD)'},
           /*{value: 'cash_flow', title:'Cash Flow Statement'},
           {value: 'bank_balances',title: 'Bank Balances and Transactions'},*/
-          {
-            value: 'bank_transfer',
-            title: 'Banking Transfer Information'
-          },
-          {
-            value: 'irs_1120',
-            title: 'IRS Business Tax Form 1120'
-          },
-          {
-            value: 'cra_t2',
-            title: 'CRA T2 Corporation Income Tax Return'
-          },
-          {
-            value: 'prepared_financials',
-            title: 'Accountant Prepared Financial Statements'
-          },
-          {
-            value: 'cash_flow_forecast',
-            title: 'Cash Flow Forecast'
-          },
-          {
-            value: 'notice_of_assessment',
-            title: 'Notice of Assessment (previous 2 years)'
-          },
-          // previous 2 years
-          {
-            value: 'cra_pd7a',
-            title: 'PD7A Statement of Account for Source Deductions'
-          },
-          {
-            value: 'bank_statements',
-            title: 'Bank Statements (previous 2 months)'
-          },
-          // from last 2 months
-          {
-            value: 'certificate_of_incorporation',
-            title: 'Certificate of Incorporation'
-          },
-          {
-            value: 'articles_of_incorporation',
-            title: 'Articles of Incorporation'
-          }
+          {value: 'bank_transfer',title: 'Banking Transfer Information'},
+          {value: 'irs_1120',title: 'IRS Business Tax Form 1120'},
+//          {value: 'cra_t2',title: 'CRA T2 Corporation Income Tax Return'},
+          {value: 'prepared_financials',title: 'Accountant Prepared Financial Statements'},
+          {value: 'cash_flow_forecast', title: 'Cash Flow Forecast'},
+          {value: 'notice_of_assessment', title: 'Notice of Assessment (previous 2 years)'}, // previous 2 years
+          {value: 'cra_pd7a', title: 'PD7A Statement of Account for Source Deductions'},
+          {value: 'bank_statements', title: 'Bank Statements (previous 2 months)'}, // from last 2 months
+          {value: 'certificate_of_incorporation', title: 'Certificate of Incorporation'},
+          {value: 'articles_of_incorporation', title: 'Articles of Incorporation'},
+
         ],
-      },
+      }/*,
+      {
+        name: 'metrics-ratios',
+        title: 'Metrics/Ratios/Analytics',
+        type: 'select',
+        multiple: true,
+        values: [
+          {value: 'financial-ratios', title: 'Financial Ratios (A/R, Gross Margin, Net Margin'},
+          {value: 'debt-ratios',title: 'Debt Ratios - DSCR, LTV'},
+          {value: 'sales-forecast', title:'Sales & Forecast'},
+          {value: 'ar-performance',title: 'A/R Performance'}
+        ],
+      }*/
+
     ],
     status: [
+      // Pending workflow status
       {
         value: 'new',
         title: 'New'
@@ -714,6 +703,12 @@
         value: 'joined',
         title: 'Joined'
       }
+    ]
+  },
+
+  chart_of_accounts: {
+    mapping: [
+      {'name': '', type:  ''}
     ]
   }
 }
