@@ -1,0 +1,36 @@
+{
+	"income/expenses": {
+		title: "INCOME/EXPENSES",
+		tab: "accounting",
+		type: "line",
+		metrics: [
+			{
+				key: "inflow",
+				type: "bar"
+			},
+			{
+				key: "outflow",
+				type: "bar"
+			},
+			{
+				key: "net",
+			},
+		],
+	},
+	"earnings": {
+		title: "EARNINGS",
+		tab: "accounting",
+		type: "bar",
+		metrics: [
+			{
+				key: "net",
+			},
+			{
+				key: "ebit",
+			},
+			{
+				key: "ebitda",
+			},
+		],
+	}
+}
